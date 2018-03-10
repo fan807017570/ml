@@ -50,15 +50,27 @@ data, target = loadData()
 
 tree = CartTree(data, target)
 print(tree.CalcEntropy())
+# print(data)
 colomn = data[:, 0]
-print(colomn)
+# print(colomn)
 colomn_list = []
 for i in range(len(colomn)):
     tuple_label = [colomn[i], target[i]]
     colomn_list.append(tuple_label)
-print(sorted(colomn_list)[1:])
-colomn_targets = colomn_list[1: 0]
-print(colomn_targets[:, 1])
+# print(sorted(colomn_list)[1:])
+for j in range(len(colomn_list)):
+    if j != 0:
+        colomn_left = sorted(colomn_list)[:j]
+        print("colomn_left:{}".format(colomn_left))
+        colomn_right = sorted(colomn_list)[j:]
+        print("colomn_right:{}".format(colomn_right))
+# colomn_targets = sorted(colomn_list)[:]
+# print(colomn_targets)
+# colomn_array = np.array(colomn_targets)
+# print(colomn_array[4:, 1])
+# print(colomn_targets)
+# print(colomn_targets[1:10][1:2])
+# print(colomn_targets[:, 1])
 # print(colomn_targets)
 # print(sorted(data[:,3]))
 # t = CartTree()
